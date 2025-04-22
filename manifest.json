@@ -1,0 +1,20 @@
+{
+    "name": "Student Support Universitas Multimedia Nusantara",
+    "short_name": "Student Support",
+    "icons": [
+        {
+            "src": "https://i.ibb.co.com/Ngr18Qbp/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co.com/MD2gRK4V/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "standalone"
+}

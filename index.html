@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="/Users/kevin/Documents/TraeNorm/StuKudeta/Student-support.png"type="image/png"> 
+    <title>Student Support Consultant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
+                <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#booking">Book Consultation</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Student Support Services</h2>
+            <p>Professional guidance and support for your academic journey</p>
+            <a href="#booking" class="cta-button">Book a Consultation</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Academic Guidance</h3>
+                    <p>Get expert advice on course selection and academic planning</p>
+                </div>
+                <div class="service-card">
+                    <h3>Career Counseling</h3>
+                    <p>Explore career paths and prepare for your future</p>
+                </div>
+                <div class="service-card">
+                    <h3>Study Skills</h3>
+                    <p>Learn effective study techniques and time management</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mental Wellness</h3>
+                    <p>Support for maintaining mental health and balance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Book a Consultation</h2>
+            <form id="booking-form" class="booking-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select required>
+                    <option value="">Select Service Type</option>
+                    <option value="academic">Academic Guidance</option>
+                    <option value="career">Career Counseling</option>
+                    <option value="study">Study Skills</option>
+                    <option value="wellness">Mental Wellness</option>
+                </select>
+                <input type="date" required>
+                <textarea placeholder="Additional Notes" rows="4"></textarea>
+                <button type="submit" class="submit-button">Schedule Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Student Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Study Guides</h3>
+                    <p>Access comprehensive study materials</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Time Management</h3>
+                    <p>Tools and tips for better time management</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Career Resources</h3>
+                    <p>Job search and interview preparation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Email: support@studentsupport.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Education Street, Academic City</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Student Support Consultant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
