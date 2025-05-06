@@ -11,6 +11,7 @@
     <header class="navbar">
         <div class="container">
             <div class="logo-container">
+                <img src="Student-support.png" alt="Student Support Logo" class="navbar-logo">
                 <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
                 <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
             </div>
@@ -24,7 +25,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Layanan</a></li>
                     <li><a href="#booking">Pendaftaran Layanan</a></li>
-                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#resources">Konselor</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -41,86 +42,123 @@
 
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Layanan Kami</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <h3>Academic Guidance</h3>
-                    <p>Get expert advice on course selection and academic planning</p>
+                    <h3>Layanan Konseling</h3>
+                    <p>Konsultasi profesional untuk mendukung kesejahteraan mental dan emosional Anda</p>
                 </div>
                 <div class="service-card">
-                    <h3>Career Counseling</h3>
-                    <p>Explore career paths and prepare for your future</p>
+                    <h3>Psikotest</h3>
+                    <p>Evaluasi psikologis untuk memahami potensi dan area pengembangan diri</p>
                 </div>
                 <div class="service-card">
-                    <h3>Study Skills</h3>
-                    <p>Learn effective study techniques and time management</p>
+                    <h3>Konselor Sebaya</h3>
+                    <p>Dukungan dari rekan sebaya yang terlatih untuk berbagi pengalaman dan solusi</p>
                 </div>
                 <div class="service-card">
-                    <h3>Mental Wellness</h3>
-                    <p>Support for maintaining mental health and balance</p>
+                    <h3>Ruang Berkisah</h3>
+                    <p>Wadah aman untuk berbagi cerita dan pengalaman personal</p>
+                </div>
+                <div class="service-card">
+                    <h3>Psikoedukasi</h3>
+                    <p>Program edukasi untuk meningkatkan pemahaman tentang kesehatan mental</p>
+                </div>
+                <div class="service-card">
+                    <h3>Layanan Kedukaan</h3>
+                    <p>Dukungan dan pendampingan dalam menghadapi masa duka</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="booking" class="booking">
-        <div class="container">
-            <h2>Formulir Layanan</h2>
-            <form id="booking-form" class="booking-form">
-                <input type="text" placeholder="Nama Lengkap" required>
-                <input type="email" placeholder="Email" required>
-                <select required>
-                    <option value="">Pilih Layanan</option>
-                    <option value="academic">Academic Guidance</option>
-                    <option value="career">Career Counseling</option>
-                    <option value="study">Study Skills</option>
-                    <option value="wellness">Mental Wellness</option>
-                </select>
-                <input type="date" required>
-                <textarea placeholder="Additional Notes" rows="4"></textarea>
-                <button type="submit" class="submit-button">Daftar Layanan</button>
-            </form>
         </div>
     </section>
 
     <section id="resources" class="resources">
         <div class="container">
-            <h2>Student Resources</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <h3>Study Guides</h3>
-                    <p>Access comprehensive study materials</p>
+            <h2>Konselor Kami</h2>
+            <div class="resource-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 1rem;">
+                <div class="resource-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px; transition: transform 0.3s ease;">
+                    <img src="images/counselor/Coun1.jpg" alt="Counselor 1" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 0.5rem;">Fiona Valentina Damanik</h3>
+                    <p style="color: var(--text-secondary);">M.PSI., Psikolog</p>
                 </div>
-                <div class="resource-card">
-                    <h3>Time Management</h3>
-                    <p>Tools and tips for better time management</p>
+                <div class="resource-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px; transition: transform 0.3s ease;">
+                    <img src="images/counselor/Coun2.jpg" alt="Counselor 2" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 0.5rem;">Yanuar Lurisa Aldio</h3>
+                    <p style="color: var(--text-secondary);">S.PSI</p>
                 </div>
-                <div class="resource-card">
-                    <h3>Career Resources</h3>
-                    <p>Job search and interview preparation</p>
+                <div class="resource-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px; transition: transform 0.3s ease;">
+                    <img src="images/counselor/Coun3.jpg" alt="Counselor 3" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 0.5rem;">Ignatia Ria Natalia</h3>
+                    <p style="color: var(--text-secondary);">M.PSI., Psikolog</p>
+                </div>
+                <div class="resource-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px; transition: transform 0.3s ease;">
+                    <img src="images/counselor/Coun4.jpg" alt="Counselor 4" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 0.5rem;">Sonny Tirta Luzanil</h3>
+                    <p style="color: var(--text-secondary);">M.PSI., Psikolog</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+
+    <section id="booking" class="booking">
         <div class="container">
-            <div class="menu-links" style="text-align: center; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Beranda</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Pendaftaran</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Aktifitas Kampus</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Prestasi</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Karir di UMN</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Info Almamater</a>
+            <h2>Formulir Layanan</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Untuk mendapatkan layanan konsultasi yang lebih personal dan terperinci, silakan mengisi formulir konsultasi kami.</p>
+            <div style="text-align: center;">
+                <a href="consultation.html" class="cta-button" style="font-size: 1.1rem;">Isi Formulir Konsultasi</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <img src="umn.png" alt="UMN Logo" style="width: 150px; height: auto;">
+        </div>
+            <div class="menu-links" style="text-align: center; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Beranda
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Pendaftaran
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Aktifitas Kampus
+                    </a>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Profil</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Kalender Akademik</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Berita & Acara</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Dormitory UMN</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">CED</a>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Wisuda UMN</a>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Prestasi
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Karir di UMN
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Info Almamater
+                    </a>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Profil
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Kalender Akademik
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Berita & Acara
+                    </a>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Dormitory UMN
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        CED
+                    </a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 5px; width: 100%;" onmouseover="this.style.background='rgba(27, 59, 111, 0.1)'; this.style.transform='translateX(5px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateX(0)'">
+                        Wisuda UMN
+                    </a>
                 </div>
             </div>
             <div class="social-links" style="text-align: center; margin-bottom: 3rem;">
@@ -140,20 +178,31 @@
                     <img src="linkedin.svg" alt="LinkedIn" style="width: 30px; height: 30px;">
                 </a>
             </div>
-            <div class="contact-info">
-                <p style="font-weight: 700;">Informasi Student Support</p>
-                <p>Email: <a href="mailto:psikolog@umn.ac.id" style="color: inherit; text-decoration: none; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">psikolog@umn.ac.id</a></p>
-                <p>Phone: (021) 542-20808</p>
-            </div>
 
-            <div class="contact-info" style="margin-top: 2rem;">
-                <p style="font-weight: 700;">Universitas Multimedia Nusantara</p>
-               
-                <p>Jl. Scientia Boulevard Gading, Curug Sangereng, Serpong, Kabupaten Tangerang, Banten 15810</p>
-                <p>(T)+62-21.5422.0808</p>
-                <p>(F)+62-21.5422.0800</p>
-                <p>Email: <a href="mailto:marketing@umn.ac.id" style="color: inherit; text-decoration: none; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">marketing@umn.ac.id</a></p>
-            </div>
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 1rem;">Informasi Student Support</h3>
+                        <p>Gedung C, Ruang C0205</p>
+                        <p>Senin - Jumat, Pukul 08:00 - 17:00</p>
+                        <p>Email: psikolog@umn.ac.id</p>
+                        <p>(T)+62-21.5422.0808</p>
+                        <p>e-mail: <a href="mailto:marketing@umn.ac.id" style="color: inherit; text-decoration: none;">psikolog@umn.ac.id</a></p>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 1rem;">Informasi UMN</h3>
+                        <p>Email: marketing@umn.ac.id</p>
+                        <p>(T)+62-21.5422.0808</p>
+                        <p>(F)+62-21.5422.0800</p>
+                        <p><a href="mailto:marketing@umn.ac.id" style="color: inherit; text-decoration: none;">e-mail: marketing@umn.ac.id</a></p>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 1rem;">Universitas Multimedia Nusantara</h3>
+                        <p>Jl. Scientia Boulevard, Gading Serpong, Kel. Curug Sangereng,</p>
+                        <p>Kec. Kelapa Dua, Kab. Tangerang,</p>
+                        <p>Prop. Banten 15810, Indonesia</p>
+                    </div>
+                </div>
         </div>
     </section>
 
