@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon"  href="/Users/kevin/Documents/TraeNorm/StuKudeta/Student-support.png"type="image/png"> 
-    <title>Student Support Consultant</title>
+    <title>Student Support Universitas Multimedia Nusantara</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,10 +22,10 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#booking">Book Consultation</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#booking">Pendaftaran Layanan</a></li>
                     <li><a href="#resources">Resources</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,9 +33,9 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h2>Welcome to Student Support Services</h2>
+            <h2>Selamat Datang di Student Support</h2>
             <p>Professional guidance and support for your academic journey</p>
-            <a href="#booking" class="cta-button">Book a Consultation</a>
+            <a href="#booking" class="cta-button">Formulir Layanan</a>
         </div>
     </section>
 
@@ -65,12 +65,12 @@
 
     <section id="booking" class="booking">
         <div class="container">
-            <h2>Book a Consultation</h2>
+            <h2>Formulir Layanan</h2>
             <form id="booking-form" class="booking-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email" required>
                 <select required>
-                    <option value="">Select Service Type</option>
+                    <option value="">Pilih Layanan</option>
                     <option value="academic">Academic Guidance</option>
                     <option value="career">Career Counseling</option>
                     <option value="study">Study Skills</option>
@@ -78,7 +78,7 @@
                 </select>
                 <input type="date" required>
                 <textarea placeholder="Additional Notes" rows="4"></textarea>
-                <button type="submit" class="submit-button">Schedule Consultation</button>
+                <button type="submit" class="submit-button">Daftar Layanan</button>
             </form>
         </div>
     </section>
@@ -105,18 +105,61 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <div class="menu-links" style="text-align: center; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Beranda</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Pendaftaran</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Aktifitas Kampus</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Prestasi</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Karir di UMN</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Info Almamater</a>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Profil</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Kalender Akademik</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Berita & Acara</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Dormitory UMN</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">CED</a>
+                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Wisuda UMN</a>
+                </div>
+            </div>
+            <div class="social-links" style="text-align: center; margin-bottom: 3rem;">
+                <a href="https://www.facebook.com/UMN.Serpong" style="margin: 0 1rem; text-decoration: none;" target="_blank">
+                    <img src="facebook.svg" alt="Facebook" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://twitter.com/UMN_Serpong" style="margin: 0 1rem; text-decoration: none;" target="_blank">
+                    <img src="twitter.svg" alt="Twitter" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://www.instagram.com/umn_serpong" style="margin: 0 1rem; text-decoration: none;" target="_blank">
+                    <img src="instagram.svg" alt="Instagram" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://www.youtube.com/user/UMNSerpong" style="margin: 0 1rem; text-decoration: none;" target="_blank">
+                    <img src="youtube.svg" alt="YouTube" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://www.linkedin.com/school/universitas-multimedia-nusantara/" style="margin: 0 1rem; text-decoration: none;" target="_blank">
+                    <img src="linkedin.svg" alt="LinkedIn" style="width: 30px; height: 30px;">
+                </a>
+            </div>
             <div class="contact-info">
-                <p>Email: support@studentsupport.com</p>
-                <p>Phone: (555) 123-4567</p>
-                <p>Address: 123 Education Street, Academic City</p>
+                <p style="font-weight: 700;">Informasi Student Support</p>
+                <p>Email: <a href="mailto:psikolog@umn.ac.id" style="color: inherit; text-decoration: none; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">psikolog@umn.ac.id</a></p>
+                <p>Phone: (021) 542-20808</p>
+            </div>
+
+            <div class="contact-info" style="margin-top: 2rem;">
+                <p style="font-weight: 700;">Universitas Multimedia Nusantara</p>
+               
+                <p>Jl. Scientia Boulevard Gading, Curug Sangereng, Serpong, Kabupaten Tangerang, Banten 15810</p>
+                <p>(T)+62-21.5422.0808</p>
+                <p>(F)+62-21.5422.0800</p>
+                <p>Email: <a href="mailto:marketing@umn.ac.id" style="color: inherit; text-decoration: none; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">marketing@umn.ac.id</a></p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Student Support Consultant. All rights reserved.</p>
+            <p>&copy; 2025 Student Support Universitas Multimedia Nusantara. All rights reserved.</p>
         </div>
     </footer>
 
