@@ -129,13 +129,14 @@ nav ul li a:hover {
         gap: 0;
         flex-direction: column;
         background-color: var(--secondary-color);
-        width: 100%;
+        width: 100vw;
         height: calc(100vh - 70px);
         text-align: center;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         overflow-y: auto;
         padding: 2rem 0;
+        margin: 0;
     }
 
     .nav-menu.active {
@@ -189,6 +190,8 @@ nav ul li a:hover {
     padding: 10rem 0 6rem;
     text-align: center;
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .hero h2 {
@@ -196,6 +199,48 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
     color: var(--text-primary);
     font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .service-card,
+    .resource-card {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        padding: 1.5rem;
+    }
+    
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services h2,
+    .resources h2,
+    .booking h2,
+    .consultation-form h2 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
 }
 
 .hero p {
@@ -240,6 +285,7 @@ nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .service-card {
@@ -285,6 +331,7 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 2rem auto;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .booking-form input,
@@ -382,6 +429,7 @@ nav ul li a:hover {
 .consultation-form .container {
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .form-info {
@@ -421,6 +469,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
 }
 
 .form-group h4 {
