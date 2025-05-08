@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -19,12 +20,16 @@ body {
     background-color: var(--primary-color);
     color: var(--text-primary);
     font-weight: 500;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Navigation */
@@ -98,6 +103,9 @@ nav ul li a:hover {
 }
 
 @media (max-width: 992px) {
+    .container {
+        padding: 0 15px;
+    }
     .hamburger {
         display: block;
     }
