@@ -2,6 +2,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
+    // Insert demo user if not already in localStorage
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    if (!users.some(u => u.email === 'demo@umn.ac.id')) {
+        users.push({
+            name: 'Demo User',
+            nim: '0000000000',
+            email: 'demo@umn.ac.id',
+            password: 'demo',
+            confirmPassword: 'demo', // optional, for registration consistency
+            phone: '081234567890',
+            prodi: 'Informatika' // or any default value
+        });
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
