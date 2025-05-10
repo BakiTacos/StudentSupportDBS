@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Student-support.png" type="image/png"> 
+    <title>Login - Student Support UMN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="Student-support.png" alt="Student Support Logo" class="navbar-logo">
+                <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
+                <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Layanan</a></li>
+                    <li><a href="index.html#resources">Konselor</a></li>
+                    <li><a href="index.html#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="login-form">
+        <div class="container">
+            <h2>Login Student Support</h2>
+            <form id="login-form" class="booking-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email UMN" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="cta-button">Login</button>
+                </div>
+                <div class="form-info" style="text-align: center; margin-top: 1rem;">
+                    <p>Gunakan akun email UMN Anda untuk login</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

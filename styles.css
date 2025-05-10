@@ -400,7 +400,7 @@ nav ul li a:hover {
     font-weight: 800;
 }
 
-.booking-form {
+.booking-form, .login-form form, .register-form form {
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -409,9 +409,41 @@ nav ul li a:hover {
     width: 100%;
 }
 
+.login-form, .register-form {
+    padding: 8rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.login-form h2, .register-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.login-form .form-group, .register-form .form-group {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input, .register-form input {
+    margin-bottom: 1rem;
+}
+
+.login-form .cta-button, .register-form .cta-button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
 .booking-form input,
 .booking-form select,
 .booking-form textarea {
+    background-color: var(--primary-color);
+
     padding: 1rem;
     border: 1px solid var(--secondary-color);
     background-color: var(--primary-color);
@@ -546,6 +578,13 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     width: 100%;
+}
+
+.booking-form input[readonly],
+.booking-form select[disabled] {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
 .form-group h4 {

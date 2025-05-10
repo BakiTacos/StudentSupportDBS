@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Student-support.png" type="image/png"> 
+    <title>Register - Student Support UMN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="Student-support.png" alt="Student Support Logo" class="navbar-logo">
+                <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
+                <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Layanan</a></li>
+                    <li><a href="index.html#resources">Konselor</a></li>
+                    <li><a href="index.html#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="register-form">
+        <div class="container">
+            <h2>Daftar Akun Student Support</h2>
+            <form id="register-form" class="booking-form">
+                <div class="form-group">
+                    <h4>Data Pribadi</h4>
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="text" placeholder="NIM" required>
+                    <input type="email" placeholder="Email UMN" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Konfirmasi Password" required>
+                    <input type="tel" placeholder="Nomor Telepon" required>
+                    <select name="prodi" required>
+                        <option value="">Pilih Program Studi</option>
+                        <option value="informatika">Informatika</option>
+                        <option value="sistem_informasi">Sistem Informasi</option>
+                        <option value="teknik_komputer">Teknik Komputer</option>
+                        <option value="teknik_elektro">Teknik Elektro</option>
+                        <option value="teknik_fisika">Teknik Fisika</option>
+                    </select>
+                    <button type="submit" class="cta-button">Daftar</button>
+                </div>
+                <div class="form-info" style="text-align: center; margin-top: 1rem;">
+                    <p>Sudah punya akun? <a href="login.html" style="color: var(--accent-color); text-decoration: none;">Login disini</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

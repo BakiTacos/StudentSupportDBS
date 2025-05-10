@@ -26,6 +26,7 @@
                     <li><a href="index.html#services">Layanan</a></li>
                     <li><a href="index.html#resources">Konselor</a></li>
                     <li><a href="index.html#contact">Kontak</a></li>
+                    <li><a href="#" onclick="logout(event)">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -116,5 +117,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        function logout(e) {
+            e.preventDefault();
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html>
