@@ -28,6 +28,7 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+        max-width: 100vw;
 }
 
 body {
@@ -40,6 +41,8 @@ body {
     width: 100%;
     position: relative;
     max-width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -52,26 +55,70 @@ body {
 
 .hero {
     position: relative;
-    overflow: hidden; /* Prevents overflow of images */
+    overflow: hidden;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: block;
+}
+
+.carousel-inner {
+    max-height: 600px;
+    overflow: hidden;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .carousel-inner img {
-    width: 100%; /* Ensures images take full width */
-    height: auto; /* Maintains aspect ratio */
+    width: 100vw;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a background to captions for better readability */
-    padding: 1rem; /* Adds padding around the caption */
-    border-radius: 5px; /* Optional: Rounds the corners of the caption */
+    display: none;
 }
 
 @media (min-width: 768px) {
-    .carousel-caption h2 {
-        font-size: 2rem; /* Adjusts font size for larger screens */
+    .carousel-inner {
+        max-height: 800px;
     }
-    .carousel-caption p {
-        font-size: 1.2rem; /* Adjusts font size for larger screens */
+    
+    .carousel-inner img {
+        height: 800px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-inner {
+        max-height: 400px;
+    }
+    
+    .carousel-inner img {
+        height: 400px;
     }
 }
 
