@@ -52,14 +52,27 @@ body {
 
 .hero {
     position: relative;
-    height: 100vh; /* Full height */
-    overflow: hidden; /* Hide overflow */
+    overflow: hidden; /* Prevents overflow of images */
 }
 
 .carousel-inner img {
-    width: 100%;
-    height: 100%; /* Make images cover the full height */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 100%; /* Ensures images take full width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a background to captions for better readability */
+    padding: 1rem; /* Adds padding around the caption */
+    border-radius: 5px; /* Optional: Rounds the corners of the caption */
+}
+
+@media (min-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 2rem; /* Adjusts font size for larger screens */
+    }
+    .carousel-caption p {
+        font-size: 1.2rem; /* Adjusts font size for larger screens */
+    }
 }
 
 
