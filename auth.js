@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         localStorage.setItem('users', JSON.stringify(users));
     }
+    if (!users.some(u => u.email === 'admin@umn.ac.id')) {
+        users.push({
+            name: 'Demo Admin',
+            nim: '0000000000',
+            email: 'admin@umn.ac.id',
+            password: 'admin',
+            confirmPassword: 'admin', // optional, for registration consistency
+            phone: '081234567890',
+            prodi: 'Sistem Informasi' // or any default value
+        });
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
