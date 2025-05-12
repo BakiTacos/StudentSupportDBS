@@ -597,6 +597,7 @@ nav ul li a:hover {
     padding-top: 120px;
     padding-bottom: 6rem;
     background-color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .consultation-form h2 {
