@@ -16,14 +16,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: 30%;
 }
 
 .navbar-logo {
@@ -59,22 +63,27 @@
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
 }
 
 nav ul li a {
     color: var(--text-primary);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     transition: color 0.3s ease;
     font-weight: 600;
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 nav ul li a:hover {
     color: var(--accent-color);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .logo-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -126,9 +135,11 @@ nav ul li a:hover {
     .nav-menu ul {
         flex-direction: column;
         padding: 0;
+        margin: 0;
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.4s ease;
+        width: 100%;
     }
 
     .nav-menu.active ul {
