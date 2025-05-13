@@ -1,4 +1,5 @@
 // Sample data structure for student consultation history
+
 const studentHistory = [
     {
         nim: '00000111231',
