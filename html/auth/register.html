@@ -5,31 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Student-support.png" type="image/png"> 
     <title>Register - Student Support UMN</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <img src="Student-support.png" alt="Student Support Logo" class="navbar-logo">
-                <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
-                <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
-            </div>
-            <button class="hamburger" aria-label="Toggle menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Layanan</a></li>
-                    <li><a href="index.html#resources">Konselor</a></li>
-                    <li><a href="index.html#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="navbar-container"></div>
 
     <section class="register-form">
         <div class="container">
@@ -60,7 +39,36 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
-    <script src="auth.js"></script>
+    <div id="footer-contact-container"></div>
+
+    <script>
+        // Load navbar
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Initialize hamburger menu after navbar is loaded
+                const hamburger = document.querySelector('.hamburger');
+                if (hamburger) {
+                    hamburger.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        document.querySelector('.nav-menu').classList.toggle('active');
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer
+        fetch('../components/footer-contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-contact-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+    <script src="../../js/auth.js"></script>
+    <script src="../script.js"></script>
+
 </body>
 </html>
+
