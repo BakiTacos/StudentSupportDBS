@@ -1,3 +1,18 @@
+// Function to check if user is admin
+function isAdmin() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    return currentUser.email === 'admin@umn.ac.id';
+}
+
+// Function to redirect if not admin
+function requireAdmin() {
+    if (!isAdmin()) {
+        window.location.href = 'login.html';
+        return false;
+    }
+    return true;
+}
+
 // Handle login form submission
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
