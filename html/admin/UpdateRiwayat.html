@@ -5,36 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Riwayat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/global.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Panel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../admin.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="DaftarRiwayat.html">Daftar Riwayat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="UpdateRiwayat.html">Update Riwayat Konsultasi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="navbarmin-container"></div>
 
+    <section class="admin-form">
     <div class="container">
         <div class="row">
             <div class="col-12 p-3 text-center">
-                <img src="../umn.png" style="max-height: 80px;" alt="UMN Logo" class="logo">
+                <img src="https://i.postimg.cc/9Fsw-9N1L/umn.png" style="max-height: 80px;" alt="UMN Logo" class="logo">
             </div>
         </div>
 
@@ -49,16 +32,52 @@
             <!-- Search results will be dynamically populated here -->
         </div>
     </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../auth.js"></script>
     <script>
         // Check if user is admin
         document.addEventListener('DOMContentLoaded', function() {
             requireAdmin();
         });
     </script>
-    <script src="../script.js"></script>
-    <script src="../js/updateRiwayat.js"></script>
+    <script>
+        fetch('../components/navbar-admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarmin-container').innerHTML = data;
+                // Initialize hamburger menu after navbar is loaded
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                if (hamburger && navMenu) {
+                    // Toggle menu on hamburger click
+                    hamburger.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+
+                    // Close menu when clicking menu items
+                    navMenu.querySelectorAll('a').forEach(item => {
+                        item.addEventListener('click', () => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        });
+                    });
+
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+    <script src="../../script.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/updateRiwayat.js"></script>
 </body>
 </html>
