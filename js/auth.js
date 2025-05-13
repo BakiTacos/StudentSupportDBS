@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user) {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 if (email === 'admin@umn.ac.id') {
-                    window.location.href = 'admin.html';
+                    window.location.href = '../admin/admin.html';
                 } else {
-                    window.location.href = 'consultation.html';
+                    window.location.href = '../students/consultation.html';
                 }
             } else {
                 alert('Email atau password salah');

@@ -3,35 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Student-support.png" type="image/png"> 
+    <link rel="icon" href="../../images/logo/Student-support.png" type="image/png"> 
     <title>Formulir Konsultasi - Student Support UMN</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <img src="Student-support.png" alt="Student Support Logo" class="navbar-logo">
-                <img src="logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
-                <img src="qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
-            </div>
-            <button class="hamburger" aria-label="Toggle menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Layanan</a></li>
-                    <li><a href="index.html#resources">Konselor</a></li>
-                    <li><a href="index.html#contact">Kontak</a></li>
-                    <li><a href="html/studentview.html">View Consultation</a></li>
-                    <li><a href="#" onclick="logout(event)">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="navbar-container"></div>
 
     <section class="consultation-form">
         <div class="container">
@@ -109,13 +86,50 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="auth.js"></script>
+    <script>
+        // Load navbar
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Initialize hamburger menu after navbar is loaded
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                if (hamburger && navMenu) {
+                    // Toggle menu on hamburger click
+                    hamburger.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+
+                    // Close menu when clicking menu items
+                    navMenu.querySelectorAll('a').forEach(item => {
+                        item.addEventListener('click', () => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        });
+                    });
+
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+       </script>
+    <script src="../../js/auth.js"></script>
+    <script src="../script.js"></script>
     <script>
         function logout(e) {
             e.preventDefault();
             localStorage.removeItem('currentUser');
-            window.location.href = 'login.html';
+            window.location.href = '../html/auth.login.html';
         }
     </script>
 </body>
