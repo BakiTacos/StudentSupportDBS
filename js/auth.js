@@ -13,6 +13,20 @@ function requireAdmin() {
     return true;
 }
 
+// Function to check if user is logged in
+function isLoggedIn() {
+    return localStorage.getItem('currentUser') !== null;
+}
+
+// Function to redirect if not logged in
+function requireLogin() {
+    if (!isLoggedIn()) {
+        window.location.href = '/html/auth/login.html';
+        return false;
+    }
+    return true;
+}
+
 // Handle login form submission
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
