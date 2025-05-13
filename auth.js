@@ -42,7 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (user) {
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                window.location.href = 'consultation.html';
+                if (email === 'admin@umn.ac.id') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'consultation.html';
+                }
             } else {
                 alert('Email atau password salah');
             }

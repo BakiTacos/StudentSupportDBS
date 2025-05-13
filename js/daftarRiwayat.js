@@ -31,24 +31,30 @@ document.addEventListener('DOMContentLoaded', function () {
         <td><button class="btn btn-primary view-detail" data-id="${entry.id}">View Detail</button></td> `; 
         tbody.appendChild(row); }); 
         
-        document.querySelectorAll('.view-detail').forEach(button => { button.addEventListener('click', function () { 
-            const id = this.getAttribute('data-id'); 
-            const entry = historyData.find(e => e.id == id); 
-            document.getElementById('popup-name').textContent = `Full Name: ${entry.fullName}`; 
-            document.getElementById('popup-nim').textContent = `NIM: ${entry.nim}`; 
-            document.getElementById('popup-description').textContent = `Description: ${entry.description}`; 
-            document.getElementById('popup-notes').textContent = `Notes: ${entry.notes}`; 
-            document.getElementById('popup').style.display = 'block'; 
-            const popupBackground = document.getElementById('popup-background'); 
-            if (popupBackground) { popupBackground.classList.add('blur'); } 
-        }); 
-    }); 
-    const closeButton = document.querySelector('.close-btn'); 
-    if (closeButton) { 
-        closeButton.addEventListener('click', function () { 
-            document.getElementById('popup').style.display = 'none'; 
-            const popupBackground = document.getElementById('popup-background'); 
-            if (popupBackground) { popupBackground.classList.remove('blur'); } 
+        document.querySelectorAll('.view-detail').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const entry = historyData.find(e => e.id == id);
+                document.getElementById('popup-name').textContent = `Full Name: ${entry.fullName}`;
+                document.getElementById('popup-nim').textContent = `NIM: ${entry.nim}`;
+                document.getElementById('popup-description').textContent = `Description: ${entry.description}`;
+                document.getElementById('popup-notes').textContent = `Notes: ${entry.notes}`;
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('popup-background').style.display = 'block';
+            });
         });
-     }
+    
+        const closeButton = document.querySelector('.close-btn');
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('popup-background').style.display = 'none';
+            });
+        }
+    
+        // Close popup when clicking outside
+        document.getElementById('popup-background').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-background').style.display = 'none';
+        });
 });
