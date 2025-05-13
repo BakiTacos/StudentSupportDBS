@@ -76,11 +76,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const consultationsHtml = student.consultations.map(consultation => `
                 <div class="consultation-entry p-3 border-bottom">
-                    <h5>Consultation on ${consultation.dateRequested}</h5>
-                    <p><strong>Type:</strong> ${consultation.consultationType}</p>
-                    <p><strong>Status:</strong> ${consultation.status}</p>
-                    <p><strong>Description:</strong> ${consultation.description}</p>
-                    <p><strong>Notes:</strong> ${consultation.notes}</p>
+                    <div class="mb-3">
+                        <h5>Consultation on ${consultation.dateRequested}</h5>
+                        <div class="form-group mb-2">
+                            <label>Type:</label>
+                            <select class="form-control consultation-type">
+                                <option value="Layanan Konseling" ${consultation.consultationType === 'Layanan Konseling' ? 'selected' : ''}>Layanan Konseling</option>
+                                <option value="Pengajuan Wawancara" ${consultation.consultationType === 'Pengajuan Wawancara' ? 'selected' : ''}>Pengajuan Wawancara</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label>Status:</label>
+                            <select class="form-control consultation-status">
+                                <option value="Pending" ${consultation.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                                <option value="In Progress" ${consultation.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                                <option value="Solved" ${consultation.status === 'Solved' ? 'selected' : ''}>Solved</option>
+                                <option value="Cancelled" ${consultation.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label>Description:</label>
+                            <textarea class="form-control consultation-description" rows="3">${consultation.description}</textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label>Notes:</label>
+                            <textarea class="form-control consultation-notes" rows="3">${consultation.notes}</textarea>
+                        </div>
+                        <button class="btn btn-primary save-changes" data-consultation-id="${consultation.id}" data-student-nim="${student.nim}">Save Changes</button>
+                    </div>
                 </div>
             `).join('');
 
@@ -105,6 +128,42 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             performSearch();
+        }
+    });
+
+    // Handle saving changes to consultation records
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('save-changes')) {
+            const consultationId = e.target.dataset.consultationId;
+            const studentNim = e.target.dataset.studentNim;
+            const consultationEntry = e.target.closest('.consultation-entry');
+
+            const updatedData = {
+                consultationType: consultationEntry.querySelector('.consultation-type').value,
+                status: consultationEntry.querySelector('.consultation-status').value,
+                description: consultationEntry.querySelector('.consultation-description').value,
+                notes: consultationEntry.querySelector('.consultation-notes').value
+            };
+
+            // Find and update the consultation in our data structure
+            const student = studentHistory.find(s => s.nim === studentNim);
+            if (student) {
+                const consultation = student.consultations.find(c => c.id === parseInt(consultationId));
+                if (consultation) {
+                    Object.assign(consultation, updatedData);
+                    
+                    // Show success message
+                    const alert = document.createElement('div');
+                    alert.className = 'alert alert-success mt-2';
+                    alert.textContent = 'Changes saved successfully!';
+                    consultationEntry.appendChild(alert);
+
+                    // Remove the alert after 3 seconds
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 3000);
+                }
+            }
         }
     });
 });
