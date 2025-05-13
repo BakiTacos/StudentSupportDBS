@@ -9,7 +9,6 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    /* Removed margin-top to eliminate gap */
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
