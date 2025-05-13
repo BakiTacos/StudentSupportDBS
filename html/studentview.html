@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Consultation Status</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <style>
+        .status-card {
+            transition: transform 0.2s;
+            margin-bottom: 30px;
+        }
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+        .status-pending {
+            border-left: 5px solid #ffc107;
+        }
+        .status-approved {
+            border-left: 5px solid #28a745;
+        }
+        .status-rejected {
+            border-left: 5px solid #dc3545;
+        }
+        .status-badge {
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../Student-support.png" alt="Student Support Logo" class="navbar-logo">
+                <img src="../logo-umn-bg-white-09-grey.webp" alt="UMN Logo" class="navbar-logo">
+                <img src="../qs-unggul2-1-1.webp" alt="QS Unggul Logo" class="navbar-logo">
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#booking">Pendaftaran Layanan</a></li>
+                    <li><a href="#resources">Konselor</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="consultation-form">
+        <div class="container py-9">
+  
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <img src="../umn.png" alt="UMN Logo" style="max-height:80px;">
+                <h2 class="mt-3">My Consultation Requests</h2>
+            </div>
+        </div>
+
+        <div class="row" id="consultationCards">
+            <!-- Consultation cards will be dynamically inserted here -->
+        </div>
+    </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/studentview.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
