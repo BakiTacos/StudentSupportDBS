@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Konsultasi Aktif - Student Support UMN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <style>
+        .table-container {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .status-badge {
+            padding: 0.5em 1em;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .status-in-progress {
+            background-color: #ffc107;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container table-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2>Layanan Konsultasi Aktif</h2>
+                <p class="text-muted">Daftar mahasiswa yang sedang dalam proses konsultasi</p>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>NIM</th>
+                        <th>Nama Lengkap</th>
+                        <th>Tanggal Pengajuan</th>
+                        <th>Jenis Layanan</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="activeConsultationTable">
+                    <!-- Table content will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="footer-contact-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load navbar
+        fetch('../components/navbar-admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Initialize hamburger menu after navbar is loaded
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                if (hamburger && navMenu) {
+                    // Toggle menu on hamburger click
+                    hamburger.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+
+                    // Close menu when clicking menu items
+                    navMenu.querySelectorAll('a').forEach(item => {
+                        item.addEventListener('click', () => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        });
+                    });
+
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer
+        fetch('../components/footer-contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-contact-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Check admin status
+        document.addEventListener('DOMContentLoaded', function() {
+            requireAdmin();
+            loadActiveConsultations();
+        });
+
+        function loadActiveConsultations() {
+            const tableBody = document.getElementById('activeConsultationTable');
+            const activeConsultations = studentHistory.flatMap(student => 
+                student.consultations
+                    .filter(consultation => consultation.status === 'In Progress')
+                    .map(consultation => ({
+                        ...consultation,
+                        nim: student.nim,
+                        fullName: student.fullName
+                    }))
+            );
+
+            if (activeConsultations.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="text-center">Tidak ada konsultasi aktif saat ini</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tableBody.innerHTML = activeConsultations.map(consultation => `
+                <tr>
+                    <td>${consultation.nim}</td>
+                    <td>${consultation.fullName}</td>
+                    <td>${consultation.dateRequested}</td>
+                    <td>${consultation.consultationType}</td>
+                    <td><span class="status-badge status-in-progress">In Progress</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="window.location.href='UpdateRiwayat.html?nim=${consultation.nim}'">Update</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+    </script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/daftarRiwayat.js"></script>
+</body>
+</html>
