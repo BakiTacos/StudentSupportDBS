@@ -1,0 +1,46 @@
+.slideshow-container {
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 1024px) {
+    .slideshow-container {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+    }
+
+    .carousel-item {
+        height: auto;
+    }
+
+    .carousel-item img {
+        height: auto;
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slideshow-container {
+        max-height: 300px;
+    }
+
+    .carousel-item img {
+        max-height: 300px;
+    }
+}
