@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="../../css/global.css">
     <script src="../../js/auth.js"></script>
     <script>
-        requireLogin();
+        if (!isLoggedIn()) {
+            window.location.href = '../../html/auth/login.html';
+        }
     </script>
 </head>
 <body>
