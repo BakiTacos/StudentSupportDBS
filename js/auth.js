@@ -7,7 +7,7 @@ function isAdmin() {
 // Function to redirect if not admin
 function requireAdmin() {
     if (!isAdmin()) {
-        window.location.href = 'login.html';
+        window.location.href = '../html/auth/login.html';
         return false;
     }
     return true;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             users.push(formData);
             localStorage.setItem('users', JSON.stringify(users));
             alert('Registrasi berhasil! Silakan login.');
-            window.location.href = 'login.html';
+            window.location.href = '../html/auth/login.html';
         });
     }
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('consultation.html')) {
         const currentUser = localStorage.getItem('currentUser');
         if (!currentUser) {
-            window.location.href = 'login.html';
+            window.location.href = '../html/auth/login.html';
         } else {
             // Auto-fill user data in consultation form
             const userData = JSON.parse(currentUser);

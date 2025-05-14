@@ -116,3 +116,10 @@
         });
     });
 </script>
+<script>
+    function logout(e) {
+            e.preventDefault();
+            localStorage.removeItem('currentUser');
+            window.location.href = '../html/auth.login.html';
+        }
+</script>
