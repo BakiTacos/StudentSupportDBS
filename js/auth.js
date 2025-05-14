@@ -21,7 +21,7 @@ function isLoggedIn() {
 // Function to redirect if not logged in
 function requireLogin() {
     if (!isLoggedIn()) {
-        window.location.href = '/html/auth/login.html';
+        window.location.href = '../html/auth/login.html';
         return false;
     }
     return true;
