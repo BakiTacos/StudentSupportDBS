@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('register-form');
     // Insert demo user if not already in localStorage
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    if (!users.some(u => u.email === 'demo@umn.ac.id')) {
+    if (!users.some(u => u.email === 'demo@student.umn.ac.id')) {
         users.push({
             name: 'Demo User',
             nim: '0000000000',
-            email: 'demo@umn.ac.id',
+            email: 'demo@student.umn.ac.id',
             password: 'demo',
             confirmPassword: 'demo', // optional, for registration consistency
             phone: '081234567890',
@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 if (email === 'admin@umn.ac.id') {
                     window.location.href = '../../html/admin/admin.html';
+                } else if (email.includes('@student.umn.ac.id')) {
+                    window.location.href = '../../html/students/consultation.html';
+                } else if (!email.includes('umn.ac.id') || !email.includes('student.umn.ac.id')) {
+                    alert('Email tidak ditemukan dalam sistem kami.');
                 } else {
                     window.location.href = '../../html/students/consultation.html';
                 }
