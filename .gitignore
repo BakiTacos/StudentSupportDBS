@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.swx
+*.swo
+*.swn
+*.sxi
+*.sxm
+.vscode
