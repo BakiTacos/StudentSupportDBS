@@ -117,6 +117,83 @@ function showNotes(consultation) {
     });
 }
 
+function showUpdateForm(consultation, studentNim) {
+    const modal = document.createElement('div');
+    modal.className = 'modal fade';
+    modal.id = 'updateModal';
+    modal.innerHTML = `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Type:</label>
+                        <select class="form-control" id="updateType">
+                            <option value="Layanan Konseling" ${consultation.consultationType === 'Layanan Konseling' ? 'selected' : ''}>Layanan Konseling</option>
+                            <option value="Pengajuan Wawancara" ${consultation.consultationType === 'Pengajuan Wawancara' ? 'selected' : ''}>Pengajuan Wawancara</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status:</label>
+                        <select class="form-control" id="updateStatus">
+                            <option value="Pending" ${consultation.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                            <option value="In Progress" ${consultation.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                            <option value="Solved" ${consultation.status === 'Solved' ? 'selected' : ''}>Solved</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description:</label>
+                        <textarea class="form-control" id="updateDescription" rows="3">${consultation.description}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Notes:</label>
+                        <textarea class="form-control" id="updateNotes" rows="3">${consultation.notes}</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUpdate(${consultation.id}, '${studentNim}')">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    const modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+    modal.addEventListener('hidden.bs.modal', () => {
+        document.body.removeChild(modal);
+    });
+}
+
+function saveUpdate(consultationId, studentNim) {
+    const type = document.getElementById('updateType').value;
+    const status = document.getElementById('updateStatus').value;
+    const description = document.getElementById('updateDescription').value;
+    const notes = document.getElementById('updateNotes').value;
+
+    const student = studentHistory.find(s => s.nim === studentNim);
+    if (student) {
+        const consultation = student.consultations.find(c => c.id === consultationId);
+        if (consultation) {
+            consultation.consultationType = type;
+            consultation.status = status;
+            consultation.description = description;
+            consultation.notes = notes;
+
+            // Close the modal
+            const modal = document.getElementById('updateModal');
+            const modalInstance = bootstrap.Modal.getInstance(modal);
+            modalInstance.hide();
+
+            // Refresh the table
+            performSearch();
+        }
+    }
+}
+
 function markAsCompleted(consultation) {
     consultation.status = 'Solved';
     performSearch(); // Refresh the table
@@ -172,12 +249,13 @@ function performSearch() {
                         </span>
                     </td>
                     <td>
-                        <button class="btn btn-info btn-sm" onclick="showConsultationDetails(${JSON.stringify(consultation).replace(/"/g, "'")});">Details</button>
-                        <button class="btn btn-secondary btn-sm" onclick="showNotes(${JSON.stringify(consultation).replace(/"/g, "'")});">Notes</button>
-                        ${consultation.status !== 'Solved' ? 
-                            `<button class="btn btn-success btn-sm" onclick="markAsCompleted(${JSON.stringify(consultation).replace(/"/g, "'")});">Mark Completed</button>` : 
-                            ''}
-                    </td>
+                    <button class="btn btn-info btn-sm" onclick="showConsultationDetails(${JSON.stringify(consultation).replace(/"/g, "'")});">Details</button>
+                    <button class="btn btn-secondary btn-sm" onclick="showNotes(${JSON.stringify(consultation).replace(/"/g, "'")});">Notes</button>
+                    <button class="btn btn-warning btn-sm" onclick="showUpdateForm(${JSON.stringify(consultation).replace(/"/g, "'")}, '${student.nim}');">Update</button>
+                    ${consultation.status !== 'Solved' ? 
+                        `<button class="btn btn-success btn-sm" onclick="markAsCompleted(${JSON.stringify(consultation).replace(/"/g, "'")});">Mark Completed</button>` : 
+                        ''}
+                </td>
                 `;
                 consultationTable.appendChild(row);
             });
