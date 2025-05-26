@@ -91,19 +91,18 @@
 
 @media screen and (max-width: 574px) {
     .slideshow-container {
-        aspect-ratio: 574/263;
-        min-height: 180px;
+        width: 100%;
+        height: 263px;
         max-height: 263px;
     }
 
     .carousel-item {
-        min-height: 180px;
-        max-height: 263px;
+        height: 263px;
     }
 
     .carousel-item img {
-        min-height: 180px;
-        max-height: 263px;
+        height: 263px;
+        width: 100%;
         object-fit: contain;
         margin: 0 auto;
     }
