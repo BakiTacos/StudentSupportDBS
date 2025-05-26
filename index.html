@@ -79,51 +79,75 @@
 
     <section id="services" class="services">
         <div class="container">
-            <h2>Layanan Kami</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Layanan Konseling</h3>
-                    <p>Konsultasi profesional untuk mendukung kesejahteraan mental dan emosional Anda</p>
-                </div>
-                <div class="service-card">
-                    <h3>Psikotest</h3>
-                    <p>Evaluasi psikologis untuk memahami potensi dan area pengembangan diri</p>
-                </div>
-                <div class="service-card">
-                    <h3>Konselor Sebaya</h3>
-                    <p>Dukungan dari rekan sebaya yang terlatih untuk berbagi pengalaman dan solusi</p>
-                </div>
-                <div class="service-card">
-                    <h3>Ruang Berkisah</h3>
-                    <p>Wadah aman untuk berbagi cerita dan pengalaman personal</p>
-                </div>
-                <div class="service-card">
-                    <h3>Psikoedukasi</h3>
-                    <p>Program edukasi untuk meningkatkan pemahaman tentang kesehatan mental</p>
-                </div>
-                <div class="service-card">
-                    <h3>Layanan Kedukaan</h3>
-                    <p>Dukungan dan pendampingan dalam menghadapi masa duka</p>
+            <div class="services-tabs">
+                <button class="tab-button active" onclick="showTab('layanan')">Layanan Kami</button>
+                <button class="tab-button" onclick="showTab('konseling')">Jenis Konseling</button>
+                <button class="tab-button" onclick="showTab('disabilitas')">Fasilitas Disabilitas</button>
+            </div>
+            
+            <div id="layanan" class="tab-content active">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Layanan Konseling</h3>
+                        <p>Konsultasi profesional untuk mendukung kesejahteraan mental dan emosional Anda</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Psikotest</h3>
+                        <p>Evaluasi psikologis untuk memahami potensi dan area pengembangan diri</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Konselor Sebaya</h3>
+                        <p>Dukungan dari rekan sebaya yang terlatih untuk berbagi pengalaman dan solusi</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Ruang Berkisah</h3>
+                        <p>Wadah aman untuk berbagi cerita dan pengalaman personal</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Psikoedukasi</h3>
+                        <p>Program edukasi untuk meningkatkan pemahaman tentang kesehatan mental</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Layanan Kedukaan</h3>
+                        <p>Dukungan dan pendampingan dalam menghadapi masa duka</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="counseling-types" class="services">
-        <div class="container">
-            <h2>Jenis Konseling</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Konseling Individual</h3>
-                    <p>Sesi konseling one-on-one dengan konselor profesional untuk membahas masalah pribadi secara mendalam dan rahasia</p>
+            <div id="konseling" class="tab-content">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Konseling Individual</h3>
+                        <p>Sesi konseling one-on-one dengan konselor profesional untuk membahas masalah pribadi secara mendalam dan rahasia</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Konseling Kelompok</h3>
+                        <p>Sesi konseling dalam kelompok kecil yang dipimpin oleh konselor profesional untuk berbagi pengalaman dan dukungan</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Konseling Sebaya</h3>
+                        <p>Layanan konseling yang diberikan oleh mahasiswa terlatih untuk membantu sesama mahasiswa dalam mengatasi tantangan akademik dan sosial</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Konseling Kelompok</h3>
-                    <p>Sesi konseling dalam kelompok kecil yang dipimpin oleh konselor profesional untuk berbagi pengalaman dan dukungan</p>
-                </div>
-                <div class="service-card">
-                    <h3>Konseling Sebaya</h3>
-                    <p>Layanan konseling yang diberikan oleh mahasiswa terlatih untuk membantu sesama mahasiswa dalam mengatasi tantangan akademik dan sosial</p>
+            </div>
+
+            <div id="disabilitas" class="tab-content">
+                <div class="service-grid">
+                    <div class="service-card disability-card">
+                        <img src="https://github.com/BakiTacos/image-host/blob/main/StudKudeta/ABK-1.jpg?raw=true" alt="Ramp Access" class="disability-image">
+                        <h3>Ramp Access</h3>
+                        <p>Akses mudah dengan ramp di setiap gedung untuk pengguna kursi roda</p>
+                    </div>
+                    <div class="service-card disability-card">
+                        <img src="https://github.com/BakiTacos/image-host/blob/main/StudKudeta/ABK-3.jpg?raw=true" alt="Elevator" class="disability-image">
+                        <h3>Lift Braille</h3>
+                        <p>Lift yang dilengkapi dengan petunjuk braille dan pengumuman suara</p>
+                    </div>
+                    <div class="service-card disability-card">
+                        <img src="https://github.com/BakiTacos/image-host/blob/main/StudKudeta/ABK-2.jpg?raw=true" alt="Accessible Toilet" class="disability-image">
+                        <h3>Pedestrian Access</h3>
+                        <p>Pedestrain Access yang dirancang untuk kemudahan pemanduan dan engarahan ke UMN</p>
+                    </div>
                 </div>
             </div>
         </div>

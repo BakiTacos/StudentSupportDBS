@@ -32,3 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
 });
+
+
+function showTab(tabId) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    // Deactivate all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+
+    // Show selected tab content
+    document.getElementById(tabId).classList.add('active');
+
+    // Activate selected tab button
+    const activeButton = document.querySelector(`[onclick="showTab('${tabId}')"]`);
+    activeButton.classList.add('active');
+}
