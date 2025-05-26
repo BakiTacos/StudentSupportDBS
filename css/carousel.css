@@ -88,3 +88,23 @@
         max-height: 250px;
     }
 }
+
+@media screen and (max-width: 574px) {
+    .slideshow-container {
+        aspect-ratio: 574/263;
+        min-height: 180px;
+        max-height: 263px;
+    }
+
+    .carousel-item {
+        min-height: 180px;
+        max-height: 263px;
+    }
+
+    .carousel-item img {
+        min-height: 180px;
+        max-height: 263px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+}
