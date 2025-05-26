@@ -21,7 +21,8 @@
 @media screen and (max-width: 1024px) {
     .slideshow-container {
         width: 100%;
-        height: 400px;
+        height: auto;
+        aspect-ratio: 16/9;
     }
 
     .carousel-item {
@@ -32,29 +33,27 @@
     .carousel-item img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        max-height: 50vh;
     }
 }
 
 @media screen and (max-width: 768px) {
     .slideshow-container {
-        height: 250px;
-    }
-
-    .carousel-item {
-        width: 100%;
-        height: 100%;
+        aspect-ratio: 3/2;
     }
 
     .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        max-height: 40vh;
     }
 }
 
 @media screen and (max-width: 480px) {
     .slideshow-container {
-        height: 200px;
+        aspect-ratio: 4/3;
+    }
+
+    .carousel-item img {
+        max-height: 30vh;
     }
 }
